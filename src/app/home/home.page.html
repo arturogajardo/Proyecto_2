@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Metodo GET
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input [(ngModel)]='id' placeholder='Ingrese id'></ion-input>
+  </ion-item>
+
+  <ion-button expand='block' (click)='buscarUsuario()'>
+    <ion-icon name="search-outline"></ion-icon>
+    <ion-label>Buscar</ion-label>
+  </ion-button>
+  <ion-button (click)="delete()" expand="block">ELIMINAR</ion-button>
+  <ion-card *ngIf="estado===1">
+    <ion-card-header>
+      <ion-card-title>{{usuario}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        Tipo: {{email}} <br/>
+        Numero: {{password}}
+    </ion-card-content>
+  </ion-card>
+
+  <form [formGroup]="formularioUpdate">
+    <div class="login-form ion-padding">
+      <div class="form-input">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">id</ion-label>
+          <ion-input [(ngModel)]="update.id" formControlName="id"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [(ngModel)]="update.usuario" formControlName="usuario"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input [(ngModel)]="update.email" formControlName="email" type="email"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [(ngModel)]="update.password" formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </div>
+      <ion-button (click)="updateUser()" size="large" class="login-button">Actualizar Datos</ion-button>
+    </div>
+  </form>
+  <ion-button expand="block" routerLink="/login">Iniciar sesión</ion-button>
+  <ion-button expand="block" routerLink="/signup">Registro</ion-button>
+</ion-content>

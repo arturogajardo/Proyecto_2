@@ -1,0 +1,33 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+      <div class="login-section ion-padding">
+        <div class="heading ion-padding">
+          <h1>¡Bienvenido!</h1>
+          <p>Inicia sesión para entrar</p>
+        </div>
+        <form [formGroup]="formularioLogin">
+          <div class="login-form ion-padding">
+            <div class="form-input">
+              <ion-icon name="mail-outline"></ion-icon>
+              <ion-item>
+                <ion-label position="floating">EMAIL</ion-label>
+                <ion-input [(ngModel)]="login.email" formControlName="email" type="email"></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-input">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-item>
+                <ion-label position="floating">CONTRASEÑA</ion-label>
+                <ion-input [(ngModel)]="login.password" formControlName="password" type="password"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+        </form>
+        <div class="action-button ion-padding">
+          <ion-button (click)="ingresar()" size="large" class="login-button">Iniciar sesion</ion-button>
+          <ion-router-link color="medium" id="btn-pass" routerLink="/pass" class="ion-color ion-color-medium md ion-activatable hydrated">¿Olvidaste tu constraseña?</ion-router-link>
+          <ion-button class="signup-button" size="large" fill="outline" routerLink="/signup">¡Registrate!</ion-button>
+        </div>
+      </div>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-content>
+
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Crea tu cuenta!</h1>
+      <p>Descubre un nuevo mundo</p>
+    </div>
+    <form [formGroup]="formularioRegistro">
+      <div class="login-form ion-padding">
+        <div class="form-input">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input [(ngModel)]="signup.usuario" formControlName="usuario"></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-input">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input [(ngModel)]="signup.email" formControlName="email" type="email"></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input [(ngModel)]="signup.password" formControlName="password" type="password"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <div class="action-button ion-padding">
+        <ion-button (click)="registro()" size="large" class="login-button">Registrarse</ion-button>
+        <ion-button expand="block" class="signup-button" size="large" fill="outline" routerLink="/login">Iniciar sesión</ion-button>
+      </div>
+    </form>
+  </div>
+  
+  </ion-content>
