@@ -54,7 +54,7 @@ export class SignupPage implements OnInit {
       await alert.present();
       return;
     }
-
+    //VALIDACION PARA CUANDO FUNCIONABA CON LOCALSTORAGE
     /*var f = this.formularioRegistro.value;
 
     if(this.formularioRegistro.invalid){
